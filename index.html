@@ -41,6 +41,7 @@
 </head>
 
 <body class="antialiased bg-gray-100 dark-mode:bg-gray-900">
+    
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 fixed z-10">
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between lg:flex-row md:px-6 lg:px-8">
@@ -97,7 +98,7 @@
                     href="#">Events</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                     href="#">Contact</a>
-                
+
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
@@ -240,6 +241,59 @@
         </div>
     </div>
 
+    <!-- cards  -->
+
+    <section class="text-gray-700">
+      <div class="container px-5 py-24 mx-auto">
+
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto">
+            <div class="bg-gray-300 h-56 w-full rounded-lg shadow-md bg-cover bg-center" style="background-image: url(./images/undraw_new_ideas_jdea.png"></div>
+            <div class=" w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5">
+              <div class="header-content inline-flex ">
+                <div class="category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-purple-100">
+                  <div class="h-2 w-2 rounded-full m-1 bg-purple-500 " ></div>
+                </div>
+                <div class="category-title text-md font-medium"> Art Integrated Learning </div>
+              </div>             
+            </div>
+          </div>
+
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto">
+            <div class="bg-gray-300 h-56 w-full rounded-lg shadow-md bg-cover bg-center" style="background-image: url(./images/undraw_project_team_lc5a.png"></div>
+
+            <div class=" w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5">
+              
+              <div class="header-content inline-flex ">
+                <div class="category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-pink-100">
+                  <div class="h-2 w-2 rounded-full m-1 bg-pink-500 " ></div>
+                </div>
+                <div class="category-title text-md font-medium"> Skill Based Language Learning</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto">
+            <div class="bg-gray-300 h-56 w-full rounded-lg shadow-md bg-cover bg-center" style="background-image: url(./images/undraw_social_dashboard_k3pt.png"></div>
+
+            <div class=" w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5">
+              
+              <div class="header-content inline-flex ">
+                <div class="category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-green-100">
+                  <div class="h-2 w-2 rounded-full m-1 bg-green-500 " ></div>
+                </div>
+                <div class="category-title text-md font-medium"> Learning Through Activities</div>
+              </div>             
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+
+    <!-- google map  -->
+
     <div id="map"></div>
 
     <section class="lg:mt-0 relative block sm:py-10 lg:py-24 lg:pt-1 bg-gray-900">
@@ -319,7 +373,7 @@
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
                     <div class="flex flex-wrap items-top mb-6">
-                        <div class="w-full lg:w-4/12 px-4 ml-auto">
+                        <div class="w-full md:w-6/12 px-4 ml-auto">
                             <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
                             <ul class="list-unstyled">
                                 <li>
@@ -328,34 +382,33 @@
                                 </li>
                                 <li>
                                     <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://blog.creative-tim.com">Blog</a>
+                                        href="https://blog.creative-tim.com">Academics</a>
                                 </li>
                                 <li>
                                     <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://www.github.com/creativetimofficial">Github</a>
+                                        href="https://www.github.com/creativetimofficial">Events</a>
                                 </li>
                                 <li>
                                     <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://www.creative-tim.com/bootstrap-themes/free">Free Products</a>
+                                        href="https://www.creative-tim.com/bootstrap-themes/free">Facilities</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="w-full lg:w-4/12 px-4">
+                        <div class="w-full md:w-6/12 px-4">
                             <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Other
                                 Resources</span>
                             <ul class="list-unstyled">
                                 <li>
                                     <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="#">MIT
-                                        License</a>
+                                        href="#">Principal</a>
                                 </li>
                                 <li>
                                     <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="#">Terms &amp; Conditions</a>
+                                        href="#">Admission Process</a>
                                 </li>
                                 <li>
                                     <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="#">Privacy Policy</a>
+                                        href="#">Gallery</a>
                                 </li>
                                 <li>
                                     <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
@@ -396,7 +449,7 @@
 
         function initMap() {
             // The location of Uluru
-            const oEMSPalad = { lat: 11.3601765, lng: 76.3283153};
+            const oEMSPalad = { lat: 11.3601765, lng: 76.3283153 };
             // The map, centered at Uluru
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 16,
