@@ -17,6 +17,15 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHu7ryCt_r8PRcbxAU4w-gXqHUUw53Kx0&callback=initMap&libraries=&v=weekly"
         defer></script>
+    <style>
+        #map {
+            /*border:solid yellow;*/
+            height: 550px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+    </style>
 </head>
 
 <body onload="myFunction()" class="antialiased bg-gray-100 dark-mode:bg-gray-900">
@@ -308,7 +317,7 @@
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
                         class="inline flex flex-row items-center w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                        <span class="">Contact Us</span>
+                        <span class="">Contact</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                             class="inline w-4 h-4 mt-1 transition-transform duration-200 transform md:-mt-1">
                             <path fill-rule="evenodd"
@@ -332,7 +341,7 @@
                                     </div>
                                     <div class="ml-3">
                                         <p class="font-semibold">Contact us</p>
-                                        <p class="text-sm text-red-500">(under-construction)</p>
+                                        <p class="text-sm">Get in touch with us!</p>
                                     </div>
                                 </a>
 
@@ -360,14 +369,65 @@
     </div>
 
     <!-- component -->
-    <section class="text-gray-600 body-font md:pt-32 lg:pt-24 h-screen">
-        <div class="container px-5 py-20 md:py-16 mx-auto">
+
+
+    <section class="text-gray-600 body-font relative">
+        <div class="container px-5 pt-24 md:pt-40 pb-20 mx-auto">
             <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Contact</h1>
-                <!-- <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Banh mi cornhole echo park skateboard authentic crucifix neutra tilde lyft biodiesel artisan direct trade mumblecore 3 wolf moon twee</p> -->
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Want to get in touch with us? We'd love to hear
+                    from you.</p>
+            </div>
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <div class="flex flex-wrap -m-2">
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                            <textarea id="message" name="message"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-2 w-full">
+                        <button
+                            class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="p-2 w-full mt-8 border-t border-gray-200 text-center">
+                        <a class="text-indigo-500">emotrust@gmail.com</a>
+                        <p class="leading-normal my-5">Orphanage English Medium School, Palad,
+                            <br>Manimooly Post,
+                            <br>Nilambur Taluk, Malappuram Dist,
+                            <br>Kerala, Pin - 679333
+                        </p>
+                        <span class="inline-flex">
+                            <a class="ml-4 text-gray-500 hover:text-gradient-to-r from-green-400 to-blue-500" href="https://www.facebook.com/O-E-M-S-Palad-102737805253941" target="_blank">
+                                <i class="flex fa fa-facebook hover:text-blue-600" aria-hidden="true"></i></a>
+                            <a class="ml-4 text-gray-500" href="#" target="_blank">
+                                <i class="flex fa fa-twitter hover:text-blue-400"" aria-hidden="true"></i></a>
+                            <a class="ml-4 text-gray-500" href="#" target="_blank">
+                                <i class="flex fa fa-whatsapp hover:text-green-500"" aria-hidden="true"></i></a>                         
+
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <div id="map"></div>
 
     <!-- footer  -->
     <footer class="relative bg-gray-300 pt-8 pb-6">
@@ -459,6 +519,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function initMap() {
+            // The location of Uluru
+            const oEMSPalad = { lat: 11.3602567, lng: 76.3284 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 16,
+                center: oEMSPalad,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: oEMSPalad,
+                map: map,
+                //icon: "/assets/images/dmd.gif"
+            });
+        }
+    </script>
 </body>
 
 </html>
