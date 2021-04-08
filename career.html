@@ -18,6 +18,24 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHu7ryCt_r8PRcbxAU4w-gXqHUUw53Kx0&callback=initMap&libraries=&v=weekly"
         defer></script>
 </head>
+<style>
+    .forms-studio {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        width: 100%;
+        height: 600px;
+    }
+
+    .forms-studio iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+</style>
 
 <body onload="myFunction()" class="antialiased bg-gray-100 dark-mode:bg-gray-900">
 
@@ -298,7 +316,7 @@
                                     </div>
                                     <div class="ml-3">
                                         <p class="font-semibold">Co-curricular Activities</p>
-                                        <p class="text-sm text-red-500">(under-construction)</p>
+                                        <p class="text-sm">Build the personality</p>
                                     </div>
                                 </a>
                             </div>
@@ -352,7 +370,7 @@
                 </div>
                 <a class="inline px-2 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                     href="newsletter.html">Newsletter</a>
-                <a class="px-2 py-2 mt-2 text-sm font-semibold bg-pink-500 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                <a class="px-2 py-2 mt-2 text-sm font-semibold bg-gradient-to-r from-green-400 to-blue-500 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                     href="admission.html">Admission</a>
             </nav>
         </div>
@@ -361,8 +379,11 @@
 
     <!-- component -->
 
-<div class="md:pt-28 lg:pt-24">
-    <style>.forms-studio{position:relative;padding-bottom:56.25%;overflow:hidden;width:100%;height:600px;}.forms-studio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}</style><div class='forms-studio'><iframe src='https://script.google.com/macros/s/AKfycbzwo8SvfTsALZNntx8sRvxgbpfOhSBSXaSH74gZZWwyzYjTEtmKvj6lG6HYx1UWDSOb9A/exec'></iframe></div>
+    <div class="md:pt-28 lg:pt-24">
+
+        <div class='forms-studio'><iframe
+                src='https://script.google.com/macros/s/AKfycbzwo8SvfTsALZNntx8sRvxgbpfOhSBSXaSH74gZZWwyzYjTEtmKvj6lG6HYx1UWDSOb9A/exec'></iframe>
+        </div>
 
     </div>
 
