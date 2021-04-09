@@ -537,7 +537,7 @@
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="full-name">Full
                                     Name</label><input type="text"
                                     class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                    placeholder="Full Name" style="transition: all 0.15s ease 0s">
+                                    placeholder="Full Name" styl="transition: all 0.15s ease 0s">
                             </div>
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -661,7 +661,7 @@
 
     <div x-data="{ open: false }" x-show.transition.duration.500ms="open"
         x-init="() => { setTimeout(() => { open = true }, 3000); }"
-        class="fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center px-4 md:px-0" style="">
+        class="fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center px-4 md:px-0">
         <div class="flex flex-col max-w-lg bg-white shadow-2xl rounded-lg border-2 border-gray-400 p-2"
             @click.away="open = false">
             <div class="flex justify-between mb-2">
@@ -691,12 +691,16 @@
         </div>
     </div>
     <div id="fb-root"></div>
+          <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="102737805253941">
+      </div>
 
     <div class="fb-customerchat"
     attribution="setup_tool"
     page_id="102737805253941">
   </div>
-
+    <div id="fb-root"></div>
     <script>
         new Splide('.splide', {
             type: 'loop',
@@ -710,6 +714,29 @@
             speed: 2000,
         }).mount();
     </script>
+ 
+        <!-- Messenger Chat plugin Code -->
+
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+          });
+        };
+
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
+
+      <!-- Your Chat plugin code -->
+
+
 <script src="./js/splide-2.4.21/webadder.js"></script>
 </body>
 </html>
