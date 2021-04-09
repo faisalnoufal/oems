@@ -2,7 +2,7 @@ document.body.onload = webadder;
 
 WebFont.load({
 	google: {
-		families: ["Raleway:100,400,700"],
+		families: ["Raleway:100,400,700,800,900"],
 	},
 });
 
@@ -45,4 +45,18 @@ window.fbAsyncInit = function () {
 	fjs.parentNode.insertBefore(js, fjs);
 })(document, "script", "facebook-jssdk");
 
-// Your Chat plugin code
+function initMap() {
+	// The location of Uluru
+	const oEMSPalad = { lat: 11.3602567, lng: 76.3284 };
+	// The map, centered at Uluru
+	const map = new google.maps.Map(document.getElementById("map"), {
+		zoom: 16,
+		center: oEMSPalad,
+	});
+	// The marker, positioned at Uluru
+	const marker = new google.maps.Marker({
+		position: oEMSPalad,
+		map: map,
+		//icon: "/assets/images/dmd.gif"
+	});
+}
