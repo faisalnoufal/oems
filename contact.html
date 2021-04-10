@@ -26,10 +26,11 @@
             /* The width is the width of the web page */
         }
     </style>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest"></head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
 
 <body onload="myFunction()" class="antialiased bg-gray-100 dark-mode:bg-gray-900">
 
@@ -395,10 +396,12 @@
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Want to get in touch with us? We'd love to hear
                     from you.</p>
             </div>
+            <form id="gform" action="" method="" class="form-control"></form>
             <div class="lg:w-1/2 md:w-2/3 mx-auto">
                 <div class="flex flex-wrap -m-2">
                     <div class="p-2 w-1/2">
                         <div class="relative">
+
                             <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
                             <input type="text" id="name" name="name"
                                 class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
@@ -419,24 +422,76 @@
                         </div>
                     </div>
                     <div class="mt-4 p-2 w-full">
-                        <button
-                            class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
+                        <button id="submit" type="submit" value="Send"
+                            class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i
+                                class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
                     </div>
-                    <div class="p-2 w-full mt-8 border-t border-gray-200 text-center">
-                        <a class="text-indigo-500">emotrust@gmail.com</a><br><hr>
-                        <div class="pt-4 font-semibold"><a href="tel:+919446615488">Phone: 94466 15488</a></div>
-                        <p class="leading-normal my-5">Orphanage English Medium School, Palad,
+                    <!-- <input class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg"
+                                 type="submit" value="Send" onClick="myFunction()"> -->
+                    </form>
+
+                    <!-- 
+          <form id="gform"
+            action=""
+            class="form-control">
+            <label for="name" class="mt-3">Name</label>
+            <input type="text" name="Name" class="form-control" required>
+            <label for="phone" class="mt-3">Phone</label>
+            <input type="text" name="Phone Number" class="form-control" required>
+            <label for="email" class="mt-3">Email</label>
+            <input type="email" name="Email-ID" class="form-control">
+            <label for="date" class="mt-3">Date Of Delivery</label>
+            <input type="date" name="Date Of Delivery" class="form-control" required>
+            <div class="form-group mt-3">
+              <label for="FormControlTextarea1">Delivery Address</label>
+              <textarea class="form-control" id="FormControlTextarea1" rows="2" placeholder="Enter your Address"
+                name="Delivery Address" required></textarea>
+            </div>
+            <div class="form-group mt-3">
+              <label for="FormControlTextarea1">Notes</label>
+              <textarea class="form-control" id="FormControlTextarea1" rows="2"
+                placeholder="Example: Chicken Biriyani for 25 Person" name="Notes" required></textarea>
+            </div>
+
+            <label for="payment" class="mt-3">Payment Method </label>
+            <div class="form-group">
+
+              <div class="custom-control custom-radio custom-control-inline mb-3">
+                <input type="radio" id="customRadioInline1" name="Payment" class="custom-control-input" value="UPI">
+                <label class="custom-control-label" for="customRadioInline1">UPI</label>
+                <input type="radio" id="customRadioInline1" name="Payment" class="custom-control-input" value="COD">
+                <label class="custom-control-label" for="customRadioInline1">COD</label>
+                
+              </div>
+      <input class="ordernow" type="submit" onClick="myFunction()" />
+            </div>
+            
+          </form> -->
+
+                    <div class="p-2 w-full mt-4 border-t border-gray-200 text-center">
+
+                        <div class="pt-4 font-semibold"><a href="tel:+919446615488"><i class="fa fa-mobile"
+                                    aria-hidden="true"></i>
+                                Phone: 94466 15488</a></div>
+                        <div class="pb-2 font-semibold"><a href="tel:+914931277688"><i class="fa fa-phone"
+                                    aria-hidden="true"></i>
+                                Phone: 04931-277688</a></div>
+
+                        <a class="text-indigo-500 font-bold" href="mailto:emotrust@gmail.com">emotrust@gmail.com</a>
+
+                        <p class="leading-normal my-4">Orphanage English Medium School, Palad,
                             <br>Manimooly Post,
                             <br>Nilambur Taluk, Malappuram Dist,
                             <br>Kerala, Pin - 679333
                         </p>
                         <span class="inline-flex">
-                            <a class="ml-4 text-gray-500 hover:text-gradient-to-r from-green-400 to-blue-500" href="https://www.facebook.com/O-E-M-S-Palad-102737805253941" target="_blank">
+                            <a class="ml-4 text-gray-500 hover:text-gradient-to-r from-green-400 to-blue-500"
+                                href="https://www.facebook.com/O-E-M-S-Palad-102737805253941" target="_blank">
                                 <i class="flex fa fa-facebook hover:text-blue-600" aria-hidden="true"></i></a>
                             <a class="ml-4 text-gray-500" href="#" target="_blank">
-                                <i class="flex fa fa-twitter hover:text-blue-400"" aria-hidden="true"></i></a>
+                                <i class="flex fa fa-twitter hover:text-blue-400"" aria-hidden=" true"></i></a>
                             <a class="ml-4 text-gray-500" href="#" target="_blank">
-                                <i class="flex fa fa-whatsapp hover:text-green-500"" aria-hidden="true"></i></a>                         
+                                <i class="flex fa fa-whatsapp hover:text-green-500"" aria-hidden=" true"></i></a>
 
                         </span>
                     </div>
@@ -554,8 +609,29 @@
                 //icon: "/assets/images/dmd.gif"
             });
         }
+        document.getElementById("submit").addEventListener("click", sendEmail);
+        function sendEmail() {
+            $("#gform").submit((e) => {
+                e.preventDefault()
+                $.ajax({
+                    // url: "https://script.google.com/macros/s/AKfycbz3xtWEhQ5INQVaNH8cIReqZdObKryKr0mfsqT4Q20XksIDk-U/exec",
+                    url: "https://script.google.com/macros/s/AKfycbyyAQk7lPdIW0DaWNiTkML-XUM-lRkpgr-px8zRabmktfdcOXnTfLq7o_AdlIUk-W4_2g/exec",
+                    data: $("#gform").serialize(),
+                    method: "post",
+                    success: function (response) {
+                        alert("Form submitted successfully")
+                        window.location.reload()
+                        //window.location.href="https://google.com"
+                    },
+                    error: function (err) {
+                        alert("Something Error")
+
+                    }
+                })
+            })
+        }
     </script>
-<script src="./js/splide-2.4.21/webadder.js"></script>
+    <script src="./js/splide-2.4.21/webadder.js"></script>
 </body>
 
 </html>
