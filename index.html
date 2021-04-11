@@ -21,6 +21,9 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHu7ryCt_r8PRcbxAU4w-gXqHUUw53Kx0&callback=initMap&libraries=&v=weekly"
         defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
     <style>
         .splide__slide img {
@@ -49,7 +52,7 @@
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between lg:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between p-2 md:p-3">
-                <a href="#"
+                <a href="/"
                     class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"><img
                         class="w-12 h-12 md:w-16 md:h-16 lg:h-20 lg:w-20" src="./images/logo.png" alt="" /></a>
                 <button
@@ -70,7 +73,7 @@
             <nav :class="{'flex': open, 'hidden': !open}"
                 class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
                 <a class="px-2 py-2 mt-2 text-sm font-semibold font-san text-gray-900  rounded-md dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 focus:text-gray-900 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    href="index.html">Home</a>
+                    href="/">Home</a>
 
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
@@ -533,31 +536,37 @@
                             <p class="leading-relaxed mt-1 mb-4 text-gray-600">
                                 Kindly complete this form so that we can get back to you.
                             </p>
+                            <form id="gform" action="" class="">
                             <div class="relative w-full mb-3 mt-8">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="full-name">Full
-                                    Name</label><input type="text"
+                                    Name</label><input type="text" name="name"
                                     class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                                     placeholder="Full Name" styl="transition: all 0.15s ease 0s">
                             </div>
+                            <div class="relative w-full mb-3 mt-8">
+                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="full-name">Phone
+                                    Number</label><input type="text" name="Phone Number"
+                                    class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                                    placeholder="Phone Number" styl="transition: all 0.15s ease 0s">
+                            </div>
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                    for="email">Email</label><input type="email"
+                                    for="email">Email</label><input type="email" name="email"
                                     class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                                     placeholder="Email" style="transition: all 0.15s ease 0s">
                             </div>
                             <div class="relative w-full mb-3">
                                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                    for="message">Message</label><textarea rows="4" cols="80"
+                                    for="message">Message</label><textarea rows="4" cols="80" name="message"
                                     class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                                     placeholder="Type a message..."></textarea>
                             </div>
-                            <div class="text-center mt-6">
-                                <button
-                                    class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                                    type="button" style="transition: all 0.15s ease 0s">
-                                    Send Message
-                                </button>
-                            </div>
+                            <div class="mt-4 p-2 w-full">
+                            <button id="submit" type="submit" value="Send"
+                                class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i
+                                    class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
+                        </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -713,6 +722,28 @@
             drag: true,
             speed: 2000,
         }).mount();
+    </script>
+
+        <script>
+        $("#gform").submit((e) => {
+            e.preventDefault()
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbyyAQk7lPdIW0DaWNiTkML-XUM-lRkpgr-px8zRabmktfdcOXnTfLq7o_AdlIUk-W4_2g/exec",
+                data: $("#gform").serialize(),
+                method: "post",
+                success: function (response) {
+                          
+                    window.location.reload(),
+                    $("#gform")[0].reset(),
+                    // alert("Form submitted successfully")
+                    swal("Thank you!", "You will be contacted soon", "success")
+                    window.location.href="thankyou.html"
+                },
+                error: function (err) {
+                    alert("Something Error")
+                }
+            })
+        })
     </script>
  
         <!-- Messenger Chat plugin Code -->
