@@ -17,18 +17,6 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHu7ryCt_r8PRcbxAU4w-gXqHUUw53Kx0&callback=initMap&libraries=&v=weekly"
         defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <style>
-        #map {
-            /*border:solid yellow;*/
-            height: 550px;
-            /* The height is 400 pixels */
-            width: 100%;
-            /* The width is the width of the web page */
-        }
-    </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -401,124 +389,139 @@
 
     <!-- component -->
 
-
-    <section class="text-gray-600 body-font relative">
-        <div class="container px-5 pt-24 md:pt-40 pb-20 mx-auto">
+    <section class="text-gray-600 body-font md:pt-32 lg:pt-24 h-full">
+        <div class="container px-5 py-20 md:py-16 mx-auto">
             <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Want to get in touch with us? We'd love to hear
-                    from you.</p>
-            </div>
-            <!-- <form id="gform" action="" method="" class="form-control"></form>
-            <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <div class="flex flex-wrap -m-2">
-                    <div class="p-2 w-1/2">
-                        <div class="relative">
-
-                            <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                            <input type="text" id="name" name="name"
-                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                        </div>
-                    </div>
-                    <div class="p-2 w-1/2">
-                        <div class="relative">
-                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                            <input type="email" id="email" name="email"
-                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                        </div>
-                    </div>
-                    <div class="p-2 w-full">
-                        <div class="relative">
-                            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                            <textarea id="message" name="message"
-                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-                        </div>
-                    </div>
-                    <div class="mt-4 p-2 w-full">
-                        <button id="submit" type="submit" value="Send"
-                            class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i
-                                class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
-                    </div>
-                    <input class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg"
-                                 type="submit" value="Send" onClick="myFunction()">
-                    </form> -->
-            <!-- 
-<div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <div class="flex flex-wrap -m-2"> -->
-            <form id="gform" action="" class="">
-                <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                    <div class="flex flex-wrap -m-2">
-                        <div class="p-2 w-full">
-                            <div class="relative">
-                                <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Full Name"
-                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <h1 class="sm:text-4xl text-3xl font-medium title-font mb-16 text-gray-900">Fee Structure </h1>
+                <!-- This example requires Tailwind CSS v2.0+ -->
+                <div class="flex flex-col">
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-100">
+                                        <tr>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-sm font-bold text-gray-700 uppercase tracking-wider">
+                                                Grade
+                                            </th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-center text-sm font-bold text-gray-700 uppercase tracking-wider">
+                                                Fee Per Annum
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr class="bg-white">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 1
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>10200
+                                            </td>
+                                        </tr>
+                                        <tr class="br-gray-50">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 2
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>10200
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 3
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>10200
+                                            </td>
+                                        </tr>
+                                        <tr class="br-gray-50">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 4
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>10200
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 5
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>12050
+                                            </td>
+                                        </tr>
+                                        <tr class="br-gray-50">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 6
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>12050
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 7
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>12050
+                                            </td>
+                                        </tr>
+                                        <tr class="br-gray-50">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 8
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>14550
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-white">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 9
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>14550
+                                            </td>
+                                        </tr>
+                                        <tr class="br-gray-50">
+                                            <td scope="col"
+                                                class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                Grade 10
+                                            </td>
+                                            <td scope="col"
+                                                class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                <i class="fa fa-inr" aria-hidden="true"></i>14550
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
-                        <div class="p-2 w-full">
-                            <div class="relative">
-                                <label for="phone" class="leading-7 text-sm text-gray-600">Phone</label>
-                                <input type="text" name="Phone Number" placeholder="Phone Number"
-                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                            </div>
-                        </div>
-                        <div class="p-2 w-full">
-
-                            <div class="relative">
-                                <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Email"
-                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                            </div>
-                        </div>
-                        <div class="p-2 w-full">
-                            <div class="relative">
-                                <label for="message" class="form-control">Message</label>
-                                <textarea name="message" placeholder="Type a message..."
-                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></textarea>
-                            </div>
-                        </div>
-                        <div class="mt-4 p-2 w-full">
-                            <button id="submit" type="submit" value="Send"
-                                class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i
-                                    class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
-            </form>
 
-            <div class="p-2 w-full mt-4 border-t border-gray-200 text-center">
-
-                <div class="pt-4 font-semibold"><a href="tel:+919446615488"><i class="fa fa-mobile"
-                            aria-hidden="true"></i>
-                        Phone: 94466 15488</a></div>
-                <div class="pb-2 font-semibold"><a href="tel:+914931277688"><i class="fa fa-phone"
-                            aria-hidden="true"></i>
-                        Phone: 04931-277688</a></div>
-
-                <a class="text-indigo-500 font-bold" href="mailto:emotrust@gmail.com">emotrust@gmail.com</a>
-
-                <p class="leading-normal my-4">Orphanage English Medium School, Palad,
-                    <br>Manimooly Post,
-                    <br>Nilambur Taluk, Malappuram Dist,
-                    <br>Kerala, Pin - 679333
-                </p>
-                <span class="inline-flex">
-                    <a class="ml-4 text-gray-500 hover:text-gradient-to-r from-green-400 to-blue-500"
-                        href="https://www.facebook.com/O-E-M-S-Palad-102737805253941" target="_blank">
-                        <i class="flex fa fa-facebook hover:text-blue-600" aria-hidden="true"></i></a>
-                    <a class="ml-4 text-gray-500" href="#" target="_blank">
-                        <i class="flex fa fa-twitter hover:text-blue-400"" aria-hidden=" true"></i></a>
-                    <a class="ml-4 text-gray-500" href="#" target="_blank">
-                        <i class="flex fa fa-whatsapp hover:text-green-500"" aria-hidden=" true"></i></a>
-
-                </span>
             </div>
         </div>
-        </div>
-        </div>
     </section>
-
-    <div id="map"></div>
 
     <!-- footer  -->
     <footer class="relative bg-gray-300 pt-8 pb-6">
@@ -526,7 +529,7 @@
             style="height: 80px; transform: translateZ(0px)">
             <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
                 version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                <polygon class="text-gray-300 fill-current" points="1560 0 2560 100 0 100"></polygon>
             </svg>
         </div>
         <div class="container mx-auto px-4">
@@ -610,50 +613,7 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function initMap() {
-            // The location of Uluru
-            const oEMSPalad = { lat: 11.3602567, lng: 76.3284 };
-            // The map, centered at Uluru
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 16,
-                center: oEMSPalad,
-            });
-            // The marker, positioned at Uluru
-            const marker = new google.maps.Marker({
-                position: oEMSPalad,
-                map: map,
-                //icon: "/assets/images/dmd.gif"
-            });
-        }
-        // document.getElementById("submit").addEventListener("click", myFunction);
-        // function myFunction() {
-
-        // }
-    </script>
-    <script>
-        $("#gform").submit((e) => {
-            e.preventDefault()
-            $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbyyAQk7lPdIW0DaWNiTkML-XUM-lRkpgr-px8zRabmktfdcOXnTfLq7o_AdlIUk-W4_2g/exec",
-                data: $("#gform").serialize(),
-                method: "post",
-                success: function (response) {
-                          
-                    window.location.reload(),
-                    $("#gform")[0].reset(),
-                    // alert("Form submitted successfully")
-                    swal("Thank you!", "You will be contacted soon", "success")
-                    window.location.href="thankyou.html"
-                },
-                error: function (err) {
-                    alert("Something Error")
-                }
-            })
-        })
-    </script>
-    <script src="./js/splide-2.4.21/webadder.js"></script>
+<script src="./js/splide-2.4.21/webadder.js"></script>
 </body>
 
 </html>
