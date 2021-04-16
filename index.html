@@ -41,11 +41,11 @@
         }
     </style>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest"></head>
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
 <body onload="myFunction()" class="antialiased bg-gray-100 dark-mode:bg-gray-900">
 
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 fixed z-10">
@@ -237,7 +237,7 @@
                                         <p class="text-sm text-red-500">(under-construction)</p>
                                     </div>
                                 </a>
-<a class="flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                <a class="flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                                     href="fee.html">
                                     <div class="bg-teal-500 text-gray-500 rounded-lg p-3">
                                         <i class="fa fa-inr fa-2x" aria-hidden="true"></i>
@@ -398,7 +398,7 @@
                                 </a>
 
                                 <a class="flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                    href="https://forms.gle/ZsysQkMuGcR1HafQ7" target=”_blank” >
+                                    href="https://forms.gle/ZsysQkMuGcR1HafQ7" target=”_blank”>
                                     <div class="bg-teal-500 text-gray-500 rounded-lg p-3">
                                         <i class="fa fa-send fa-2x" aria-hidden="true"></i>
                                     </div>
@@ -517,7 +517,6 @@
                 <div class="p-4 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto">
                     <div class="h-56 w-80 rounded-lg shadow-md bg-cover bg-center"
                         style="background-image: url(./images/skill.jpg"></div>
-
                     <div
                         class=" w-70 -mt-10 shadow-lg rounded-lg overflow-hidden p-5 bg-pink-50 hover:bg-pink-500 hover:text-white">
 
@@ -566,35 +565,37 @@
                                 Kindly complete this form so that we can get back to you.
                             </p>
                             <form id="gform" action="" class="">
-                            <div class="relative w-full mb-3 mt-8">
-                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="full-name">Full
-                                    Name</label><input type="text" name="name"
-                                    class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                    placeholder="Full Name" styl="transition: all 0.15s ease 0s">
-                            </div>
-                            <div class="relative w-full mb-3 mt-8">
-                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="full-name">Phone
-                                    Number</label><input type="text" name="Phone Number"
-                                    class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                    placeholder="Phone Number" styl="transition: all 0.15s ease 0s">
-                            </div>
-                            <div class="relative w-full mb-3">
-                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                    for="email">Email</label><input type="email" name="email"
-                                    class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                    placeholder="Email" style="transition: all 0.15s ease 0s">
-                            </div>
-                            <div class="relative w-full mb-3">
-                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                    for="message">Message</label><textarea rows="4" cols="80" name="message"
-                                    class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-                                    placeholder="Type a message..."></textarea>
-                            </div>
-                            <div class="mt-4 p-2 w-full">
-                            <button id="submit" type="submit" value="Send"
-                                class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i
-                                    class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
-                        </div>
+                                <div class="relative w-full mb-3 mt-8">
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                        for="full-name">Full
+                                        Name</label><input type="text" name="name"
+                                        class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                                        placeholder="Full Name" styl="transition: all 0.15s ease 0s">
+                                </div>
+                                <div class="relative w-full mb-3 mt-8">
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                        for="full-name">Phone
+                                        Number</label><input type="text" name="Phone Number"
+                                        class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                                        placeholder="Phone Number" styl="transition: all 0.15s ease 0s">
+                                </div>
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                        for="email">Email</label><input type="email" name="email"
+                                        class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                                        placeholder="Email" style="transition: all 0.15s ease 0s">
+                                </div>
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                        for="message">Message</label><textarea rows="4" cols="80" name="message"
+                                        class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                                        placeholder="Type a message..."></textarea>
+                                </div>
+                                <div class="mt-4 p-2 w-full">
+                                    <button id="submit" type="submit" value="Send"
+                                        class="flex mx-auto text-white bg-gradient-to-r from-green-400 to-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg">Send<i
+                                            class="fa fa-send pt-1 pl-2" aria-hidden="true"></i></button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -729,15 +730,11 @@
         </div>
     </div>
     <div id="fb-root"></div>
-          <div class="fb-customerchat"
-        attribution="setup_tool"
-        page_id="102737805253941">
-      </div>
+    <div class="fb-customerchat" attribution="setup_tool" page_id="102737805253941">
+    </div>
 
-    <div class="fb-customerchat"
-    attribution="setup_tool"
-    page_id="102737805253941">
-  </div>
+    <div class="fb-customerchat" attribution="setup_tool" page_id="102737805253941">
+    </div>
     <div id="fb-root"></div>
     <script>
         new Splide('.splide', {
@@ -753,7 +750,7 @@
         }).mount();
     </script>
 
-        <script>
+    <script>
         $("#gform").submit((e) => {
             e.preventDefault()
             $.ajax({
@@ -761,12 +758,12 @@
                 data: $("#gform").serialize(),
                 method: "post",
                 success: function (response) {
-                          
+
                     window.location.reload(),
-                    $("#gform")[0].reset(),
-                    // alert("Form submitted successfully")
-                    swal("Thank you!", "You will be contacted soon", "success")
-                    window.location.href="thankyou.html"
+                        $("#gform")[0].reset(),
+                        // alert("Form submitted successfully")
+                        swal("Thank you!", "You will be contacted soon", "success")
+                    window.location.href = "thankyou.html"
                 },
                 error: function (err) {
                     alert("Something Error")
@@ -774,29 +771,30 @@
             })
         })
     </script>
- 
-        <!-- Messenger Chat plugin Code -->
 
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v10.0'
-          });
+    <!-- Messenger Chat plugin Code -->
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v10.0'
+            });
         };
 
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-      </script>
+    </script>
 
-      <!-- Your Chat plugin code -->
+    <!-- Your Chat plugin code -->
 
 
-<script src="./js/splide-2.4.21/webadder.js"></script>
+    <script src="./js/splide-2.4.21/webadder.js"></script>
 </body>
+
 </html>
