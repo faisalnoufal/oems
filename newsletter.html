@@ -24,7 +24,9 @@
 </head>
 
 <body onload="myFunction()" class="antialiased bg-gray-100 dark-mode:bg-gray-900">
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0"
+        nonce="4psvwNze"></script>
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 fixed z-10">
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between lg:flex-row md:px-6 lg:px-8">
@@ -401,7 +403,8 @@
     <section class="text-gray-600 body-font md:pt-32 lg:pt-24 h-screen">
         <div class="container px-5 py-20 md:py-16 mx-auto">
             <div class="flex flex-col text-center w-full mb-12">
-                <marquee class="font-semibold text-blue-400">Admission Open Now! Click to fill in the <a href="admission.html" target="_blank" class="text-red-700">Admission form</a> </marquee>
+                <marquee class="font-semibold text-blue-400">Admission Open Now! Click to fill in the <a
+                        href="admission.html" target="_blank" class="text-red-700">Admission form</a> </marquee>
                 <div class="fb-page" data-href="https://www.facebook.com/O-E-M-S-Palad-102737805253941"
                     data-tabs="timeline" data-width="380" data-height="600" data-small-header="false"
                     data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
