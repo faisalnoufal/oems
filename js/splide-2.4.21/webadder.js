@@ -28,37 +28,4 @@ function webadder() {
 	atag.onmouseout = function () {
 		atag.style.color = "white";
 	};
-}// Messenger Chat plugin Code
-
-window.fbAsyncInit = function () {
-	FB.init({
-		xfbml: true,
-		version: "v10.0",
-	});
-};
-
-(function (d, s, id) {
-	var js,
-		fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s);
-	js.id = id;
-	js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-	fjs.parentNode.insertBefore(js, fjs);
-})(document, "script", "facebook-jssdk");
-
-function initMap() {
-	// The location of Uluru
-	const oEMSPalad = { lat: 11.3602567, lng: 76.3284 };
-	// The map, centered at Uluru
-	const map = new google.maps.Map(document.getElementById("map"), {
-		zoom: 16,
-		center: oEMSPalad,
-	});
-	// The marker, positioned at Uluru
-	const marker = new google.maps.Marker({
-		position: oEMSPalad,
-		map: map,
-		//icon: "/assets/images/dmd.gif"
-	});
 }
