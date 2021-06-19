@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orphanage English Medium School - Palad | Nilambur</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab:300'>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- <script src="js/splide-2.4.21/dist/js/splide.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.3.1/dist/js/splide.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHu7ryCt_r8PRcbxAU4w-gXqHUUw53Kx0&callback=initMap&libraries=&v=weekly"
+        defer></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest"></head>
+
+<body onload="myFunction()" class="antialiased bg-gray-100 ">
+
+    <div class="w-full text-yellow-400 bg-black fixed z-10">
+        <div x-data="{ open: false }"
+            class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between lg:flex-row md:px-6 lg:px-8">
+            <div class="flex flex-row items-center justify-between p-2 md:p-3">
+                <a href="/"
+                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg  focus:outline-none focus:shadow-outline"><img
+                        class="w-12 h-12 md:w-16 md:h-16 lg:h-20 lg:w-20" src="../images/logo.png" alt="" /></a>
+                <button
+                    class="sm:hidden bg-yellow-400 text-black shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                    type="button"> <a href="tel:+919446615488">
+                        <i class="flex fa fa-phone" aria-hidden="true"></i></a></button>
+                <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}"
+                class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                <a class="px-2 py-2 mt-2 text-sm font-semibold font-san text-yellow-400  rounded-md      md:mt-0 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline"
+                    href="/">Home</a>
+
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="inline flex flex-row items-center w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg      md:w-auto md:inline md:mt-0 md:ml-4 hover:text-yellow-200 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline">
+                        <span class="">About</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 mt-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute left-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
+                        <div class="px-2 pt-2 pb-4 bg-black rounded-md shadow-lg">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <a class="flex row items-start rounded-lg bg-transparent p-2 text:text-gray-900 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="our_vision.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-rocket fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Our Mission and Vision</p>
+                                        <p class="text-sm">Success of OEMS</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="pta.html">
+                                    <div class="inline bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-life-ring fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">PTA Members</p>
+                                        <p class="text-sm">Our strength</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="affiliation.html">
+                                    <div class="inline bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-certificate fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Affiliation</p>
+                                        <p class="text-sm">CBSE Delhi</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="our_staffs.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Our Staffs</p>
+                                        <p class="text-sm">Who shape little minds</p>
+                                    </div>
+                                </a>
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="enrollment.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-list-ol fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Enrollment Status</p>
+                                        <p class="text-sm">Total Students</p>
+                                    </div>
+                                </a>
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="smc.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-cogs fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">S M C</p>
+                                        <p class="text-sm">Management Committee</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="inline flex flex-row items-center w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg      md:w-auto md:inline md:mt-0 md:ml-4 hover:text-yellow-200 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline">
+                        <span class="">Academics</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 mt-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute left-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
+                        <div class="px-2 pt-2 pb-4 bg-black rounded-md shadow-lg ">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="curriculum.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Curriculum</p>
+                                        <p class="text-sm">Affiliated with CBSE</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="gCalendar.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Academic Calendar</p>
+                                        <p class="text-sm">Know the schedules</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="exam_results.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Examination Results</p>
+                                        <p class="text-sm">Board Examinations</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="labs.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-flask fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Labs</p>
+                                        <p class="text-sm">Practical labs</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="alumini.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Alumini</p>
+                                        <p class="text-sm text-red-500">(under-construction)</p>
+                                    </div>
+                                </a>
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="fee.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-inr fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Fee Structure</p>
+                                        <p class="text-sm">Tuition </p>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="inline flex flex-row items-center w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg      md:w-auto md:inline md:mt-0 md:ml-4 hover:text-yellow-200 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline">
+                        <span class="">Facilities</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 mt-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute left-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
+                        <div class="px-2 pt-2 pb-4 bg-black rounded-md shadow-lg ">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="health_care.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-medkit fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Health Care</p>
+                                        <p class="text-sm">First Aid</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="library_reading.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-book fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Library & Reading Room</p>
+                                        <p class="text-sm">Read to Reduce Stress</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="transport.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-bus fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Transportation</p>
+                                        <p class="text-sm">School bus service</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="quranlearning.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-leanpub fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Quran Learning</p>
+                                        <p class="text-sm">Learn and spread the Light</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="inline flex flex-row items-center w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg      md:w-auto md:inline md:mt-0 md:ml-4 hover:text-yellow-200 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline">
+                        <span class="">Beyond Classroom</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 mt-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
+                        <div class="px-2 pt-2 pb-4 bg-black rounded-md shadow-lg ">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="gallery.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Gallery</p>
+                                        <p class="text-sm">Check our image gallery</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="co_curricular.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Co-curricular Activities</p>
+                                        <p class="text-sm">Build the personality</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="inline flex flex-row items-center w-full px-2 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg      md:w-auto md:inline md:mt-0 md:ml-4 hover:text-yellow-200 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline">
+                        <span class="">Contact</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 mt-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
+                        <div class="px-2 pt-2 pb-4 bg-black rounded-md shadow-lg ">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="contact.html">
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-envelope-open fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Contact us</p>
+                                        <p class="text-sm">Get in touch with us!</p>
+                                    </div>
+                                </a>
+
+                                <a class="flex row items-start rounded-lg bg-transparent p-2      hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="https://forms.gle/ZsysQkMuGcR1HafQ7" target=”_blank”>
+                                    <div class="bg-teal-500 hover:text-gray-500 rounded-lg p-3">
+                                        <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Career oportunities</p>
+                                        <p class="text-sm">Apply for a job</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="inline px-2 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  hover:text-yellow-200  md:mt-0 md:ml-4 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline"
+                    href="newsletter.html">Newsletter</a>
+                <a class="inline px-2 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  hover:text-yellow-200  md:mt-0 md:ml-4 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline"
+                    href="admission.html">Admission</a>
+                <a class="px-2 py-2 mt-2 text-sm font-semibold bg-gradient-to-r from-green-400 to-blue-500 rounded-lg       md:mt-0 md:ml-4 focus:text-gray-900 focus:bg-yellow-400 focus:outline-none focus:shadow-outline"
+                    href="https://oemspalad.sactin.com" target="_blank">login</a>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <!-- component -->
+<section class="text-gray-600 body-font md:pt-32 lg:pt-24 h-full">
+        <div class="container px-5 py-20 md:py-16 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12 items-center">
+                <h1 class="sm:text-4xl text-3xl font-medium title-font mb-8 text-gray-900">Oops 404!</h1>
+                <p class="mb-8">Broken link </p>
+                <img class="h-60 w-60" src="https://source.unsplash.com/random/100" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- footer  -->
+    <footer class="relative bg-gray-300 pt-8 pb-6">
+        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+            style="height: 80px; transform: translateZ(0px)">
+            <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                <polygon class="text-gray-300 fill-current" points="1560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-6/12 px-4">
+                    <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
+                    <h5 class="text-lg mt-0 mb-2 text-gray-700">
+                        Find us on any of these platforms, we respond in 1-2 business days.
+                    </h5>
+                    <div class="my-6">
+                        <button
+                            class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                            type="button">
+                            <i class="flex fa fa-twitter" aria-hidden="true"></i></button><button
+                            class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                            type="button"> <a href="https://www.facebook.com/O-E-M-S-Palad-102737805253941"
+                                target="_blank">
+                                <i class="flex fa fa-facebook" aria-hidden="true"></i></button></a>
+                        <button
+                            class="bg-white text-green-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                            type="button">
+                            <i class="flex fa fa-whatsapp" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="flex flex-wrap items-top mb-6">
+                        <div class="w-full md:w-6/12 px-4 ml-auto">
+                            <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">About</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">Academics</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">Events</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">Facilities</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-6/12 px-4">
+                            <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Other
+                                Resources</span>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">Principal</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">Admission</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">Gallery</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                                        href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-400">
+            <div class="flex flex-wrap items-center md:justify-between justify-center">
+                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+                    <div class="text-sm text-gray-600 font-semibold py-1">
+                        Copyright © 2021 OEMS
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="./js/splide-2.4.21/webadder.js"></script>
+</body>
+
+</html>
